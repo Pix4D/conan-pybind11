@@ -1,6 +1,5 @@
 from conans import ConanFile, CMake
 from conans.tools import os_info
-import sys
 
 class pybind11Conan(ConanFile):
     name = 'pybind11'
