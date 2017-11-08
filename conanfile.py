@@ -1,4 +1,5 @@
 from conans import ConanFile, CMake
+from conans.tools import os_info
 import sys
 
 class pybind11Conan(ConanFile):
@@ -24,6 +25,8 @@ class pybind11Conan(ConanFile):
         cmake = CMake(self, parallel=True)
         cmake_args = {}
         cmake_args['PYBIND11_TEST'] = 'OFF' # tests require pytest, which may not be available
+        if os_info.is_windows:
+            cmake_args['PYBIND11_CPP_STANDARD'] = '-std=c++11'
 
         cmake.configure(source_dir='../%s' % self.name, build_dir='build', defs=cmake_args)
         cmake.build(target='install')
