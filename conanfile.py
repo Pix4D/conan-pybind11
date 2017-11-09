@@ -22,8 +22,7 @@ class pybind11Conan(ConanFile):
 
     def build(self):
         cmake = CMake(self, parallel=True)
-        cmake_args = {}
-        cmake_args['PYBIND11_TEST'] = 'OFF' # tests require pytest, which may not be available
+        cmake_args = {'PYBIND11_TEST': 'OFF'} # tests require pytest, which may not be available
         if not os_info.is_windows:
             cmake_args['PYBIND11_CPP_STANDARD'] = '-std=c++11'
 
