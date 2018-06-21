@@ -10,7 +10,7 @@ class pybind11TestConan(ConanFile):
         cmake = CMake(self)
         cmake_args = {'PYTHON_EXECUTABLE': sys.executable} # set python version same as conan venv
 
-        cmake.configure(source_dir=self.conanfile_directory, defs=cmake_args)
+        cmake.configure(source_dir=self.source_folder, defs=cmake_args)
         cmake.build()
 
     def test(self):
