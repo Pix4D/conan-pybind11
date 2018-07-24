@@ -4,7 +4,7 @@ import os
 
 class pybind11Conan(ConanFile):
     name = 'pybind11'
-    lib_version = '2.2'
+    lib_version = '2.2.3'
     revision = '1'
     version = '{}-{}'.format(lib_version, revision)
     settings = 'os', 'compiler', 'build_type', 'arch'
@@ -14,9 +14,6 @@ class pybind11Conan(ConanFile):
 
     def package_id(self):
         self.info.header_only()
-
-    def config_options(self):
-        self.requires('Eigen3/3.3.3-4@pix4d/stable')
 
     def source(self):
         self.run('git clone --depth 1 --branch v%s %s %s' % (self.lib_version, self.url, self.name))
