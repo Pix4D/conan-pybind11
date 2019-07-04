@@ -27,4 +27,6 @@ class PyBind11Conan(ConanFile):
         self.copy("*LICENSE", keep_path=False)
 
     def package_id(self):
-        self.info.header_only()
+        # Make all options and dependencies (direct and transitive) contribute
+        # to the package id
+        self.info.requires.full_package_mode()
