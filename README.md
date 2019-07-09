@@ -1,1 +1,1 @@
-Conan recipe for the header-only pybind11 library
+Superseded by https://github.com/Pix4D/conan-pybind11
