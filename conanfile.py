@@ -4,7 +4,7 @@ from conans import ConanFile, tools, CMake
 class PyBind11Conan(ConanFile):
     name = "pybind11"
     upstream_version = "2.4.3"
-    revision = "0"
+    revision = "1"
     version = "{}-{}".format(upstream_version, revision)
     settings = "os", "compiler", "arch", "build_type"
     description = "Seamless operability between C++11 and Python"
