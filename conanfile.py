@@ -3,7 +3,7 @@ from conans import ConanFile, tools, CMake
 
 class PyBind11Conan(ConanFile):
     name = "pybind11"
-    upstream_version = "2.6.1"
+    upstream_version = "2.9.2"
     revision = "0"
     version = "{}-{}".format(upstream_version, revision)
     settings = "os", "compiler", "arch", "build_type"
