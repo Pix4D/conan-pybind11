@@ -1,6 +1,7 @@
-from conans import ConanFile, CMake
 import os
 import sys
+
+from conans import ConanFile, CMake
 
 
 class Pybind11TestConan(ConanFile):
@@ -13,7 +14,5 @@ class Pybind11TestConan(ConanFile):
         cmake.build()
 
     def test(self):
-        sys.path.append(".")
-        import example
-        self.output.info("Add %s" % example.add(2, 3))
-        assert example.add(2, 40) == 42
+        module_path = os.path.join(self.source_folder, "test.py")
+        self.run(f'{sys.executable} "{module_path}"')
