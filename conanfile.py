@@ -1,9 +1,9 @@
-from conans import ConanFile, tools, CMake
+from conans import CMake, ConanFile, tools
 
 
 class PyBind11Conan(ConanFile):
     name = "pybind11"
-    upstream_version = "2.12.0"
+    upstream_version = "2.13.6"
     revision = "0"
     version = "{}-{}".format(upstream_version, revision)
     settings = "os", "compiler", "arch", "build_type"
