@@ -3,8 +3,8 @@ from conans import CMake, ConanFile, tools
 
 class PyBind11Conan(ConanFile):
     name = "pybind11"
-    upstream_version = "2.13.6"
-    revision = "0"
+    upstream_version = "2.12.0"
+    revision = "1"
     version = "{}-{}".format(upstream_version, revision)
     settings = "os", "compiler", "arch", "build_type"
     description = "Seamless operability between C++11 and Python"
